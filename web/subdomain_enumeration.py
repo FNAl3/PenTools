@@ -1,4 +1,5 @@
 import requests
+import pyfiglet
 import sys
 import argparse
 import concurrent.futures
@@ -45,6 +46,9 @@ def check_subdomain(ip_address, base_domain, sub, baseline_len, baseline_code, v
     return False
 
 def main():
+    ascii_banner = pyfiglet.figlet_format("PenTools \n Subdomain Enum")
+    print(ascii_banner)
+    
     parser = argparse.ArgumentParser(description='Threaded Subdomain Enumeration Tool')
     parser.add_argument('ip', help='Target IP Address (or Domain for DNS mode)')
     parser.add_argument('base_domain', nargs='?', default='', help='Base Domain (e.g. example.com)')
@@ -102,4 +106,12 @@ def main():
         print("[-] No subdomains found.")
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
+    except SystemExit:
+        pass
+    except Exception as e:
+        print(f"Error: {e}")
+    input("\nPress Enter to exit...")

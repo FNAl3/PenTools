@@ -1,5 +1,6 @@
 # Import sys for system interaction (arguments, output)
 import sys
+import pyfiglet
 # Import socket to create network connections
 import socket
 # Import argparse to handle command line arguments easily
@@ -72,6 +73,9 @@ def scan_port(ip, port):
 
 # Main program function
 def main():
+    ascii_banner = pyfiglet.figlet_format("PenTools \n Port Scanner")
+    print(ascii_banner)
+
     # Configure the arguments acceptable by the program
     parser = argparse.ArgumentParser(description='Threaded Port Scanner with Banner Grabbing')
     parser.add_argument('target', help='Target IP Address')
@@ -125,4 +129,12 @@ def main():
 
 # Script entry point
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
+    except SystemExit:
+        pass
+    except Exception as e:
+        print(f"Error: {e}")
+    input("\nPress Enter to exit...")

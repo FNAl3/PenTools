@@ -43,6 +43,14 @@
    ```
    *(Note: You may need to create a requirements.txt file with: `requests`, `scapy`, `paramiko`, `keyboard`, `pyfiglet`)*
 
+## 🏃 Running without Python
+You can use the compiled executables in the `bin/` folder to run the tools without installing Python or dependencies.
+
+Example:
+```bash
+bin\port_scanner.exe 192.168.1.1
+```
+
 ## 🛠️ Usage
 
 ### Subdomain Enumeration

@@ -50,4 +50,5 @@ Establishes a reverse connection from the victim back to the attacker.
 ---
 ---
 > **Note:**
-> Pre-compiled executables have been removed. To use the tools, ensure you have Python installed and run the scripts directly as shown above.
+> You can also find pre-compiled executables in the `bin/` directory. You can run them directly from the command line without `python`.
+> Example: `bin\port_scanner.exe <args>`

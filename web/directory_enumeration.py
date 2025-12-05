@@ -1,4 +1,5 @@
 import requests
+import pyfiglet
 import sys
 import argparse
 import concurrent.futures
@@ -14,6 +15,9 @@ def check_directory(url, timeout):
     return False
 
 def main():
+    ascii_banner = pyfiglet.figlet_format("PenTools \n Dir Enumeration")
+    print(ascii_banner)
+
     parser = argparse.ArgumentParser(description='Threaded Directory Enumeration Tool')
     parser.add_argument('ip', help='Target IP Address')
     parser.add_argument('-w', '--wordlist', default="directories.txt", help='Path to wordlist (default: directories.txt)')
@@ -55,4 +59,12 @@ def main():
     print("\n[*] Scan completed.")
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
+    except SystemExit:
+        pass
+    except Exception as e:
+        print(f"Error: {e}")
+    input("\nPress Enter to exit...")

@@ -5,7 +5,7 @@ import sys
 import argparse
 
 def main():
-    ascii_banner = pyfiglet.figlet_format("FNAl3 \n Pentest \n HASH CRACKER")
+    ascii_banner = pyfiglet.figlet_format("PenTools \n Hash Cracker")
     print(ascii_banner)
 
     parser = argparse.ArgumentParser(description="Hash Cracker Tool (MD5, SHA256, Base64)")
@@ -69,4 +69,12 @@ def decode_base64(wordlist, target_str):
         print(f"[!] Error: Wordlist not found at {wordlist}")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
+    except SystemExit:
+        pass
+    except Exception as e:
+        print(f"Error: {e}")
+    input("\nPress Enter to exit...")

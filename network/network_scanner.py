@@ -44,3 +44,5 @@ except Exception as e:
     # Error handling
     print(f"[!] Error: {e}")
     print("[!] Ensure you have Npcap installed (required for Scapy on Windows).")
+
+input("\nPress Enter to exit...")

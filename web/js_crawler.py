@@ -1,4 +1,5 @@
 import requests
+import pyfiglet
 from bs4 import BeautifulSoup
 import argparse
 import os
@@ -45,6 +46,9 @@ def download_js(url, folder):
         print(f"[!] Error: {e}")
 
 def main():
+    ascii_banner = pyfiglet.figlet_format("PenTools \n JS Crawler")
+    print(ascii_banner)
+
     parser = argparse.ArgumentParser(description='JS Crawler - Download all .js files from a page')
     parser.add_argument('url', help='Target URL (e.g. http://example.com)')
     parser.add_argument('-o', '--output', default='js_files', help='Output directory (default: js_files)')
@@ -54,4 +58,12 @@ def main():
     download_js(args.url, args.output)
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
+    except SystemExit:
+        pass
+    except Exception as e:
+        print(f"Error: {e}")
+    input("\nPress Enter to exit...")

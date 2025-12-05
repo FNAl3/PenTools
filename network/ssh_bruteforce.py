@@ -1,4 +1,5 @@
 import paramiko
+import pyfiglet
 import sys
 import os
 import argparse
@@ -33,6 +34,9 @@ def ssh_connect(target, username, password):
     return False
 
 def main():
+    ascii_banner = pyfiglet.figlet_format("PenTools \n SSH Bruteforce")
+    print(ascii_banner)
+
     parser = argparse.ArgumentParser(description='Threaded SSH Brute Force Tool')
     parser.add_argument('target', help='Target IP Address')
     parser.add_argument('username', help='Username to bruteforce')
@@ -72,4 +76,12 @@ def main():
         print('\n[!] Password not found in the provided wordlist.')
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
+    except SystemExit:
+        pass
+    except Exception as e:
+        print(f"Error: {e}")
+    input("\nPress Enter to exit...")

@@ -22,9 +22,17 @@ def download_file(url, output_name=None):
         print(f"[-] Error: {e}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Simple File Downloader")
-    parser.add_argument("url", help="URL of the file to download")
-    parser.add_argument("-o", "--output", help="Name of the output file")
-    
-    args = parser.parse_args()
-    download_file(args.url, args.output)
+    try:
+        parser = argparse.ArgumentParser(description="Simple File Downloader")
+        parser.add_argument("url", help="URL of the file to download")
+        parser.add_argument("-o", "--output", help="Name of the output file")
+        
+        args = parser.parse_args()
+        download_file(args.url, args.output)
+    except KeyboardInterrupt:
+        pass
+    except SystemExit:
+        pass
+    except Exception as e:
+        print(f"Error: {e}")
+    input("\nPress Enter to exit...")
