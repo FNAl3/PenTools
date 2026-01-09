@@ -1,0 +1,7 @@
+pyfiglet
+scapy
+paramiko
+keyboard
+requests
+beautifulsoup4
+pyinstaller

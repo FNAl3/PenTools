@@ -41,7 +41,7 @@
    ```bash
    pip install -r requirements.txt
    ```
-   *(Note: You may need to create a requirements.txt file with: `requests`, `scapy`, `paramiko`, `keyboard`, `pyfiglet`)*
+
 
 ## 🏃 Running without Python
 You can use the compiled executables in the `bin/` folder to run the tools without installing Python or dependencies.
